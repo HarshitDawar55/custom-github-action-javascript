@@ -10,9 +10,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
       - name: Run custom action
+        id: greet
         uses: HarshitDawar55/custom-github-action-javascript@v0.0.1
         with:
           name: 'Harshit Dawar'
       - name: Display output
         run: |
-          echo "Greeting: ${{ steps.test.outputs.greeting }}"
+          echo "Greeting: ${{ steps.greet.outputs.greeting }}"
